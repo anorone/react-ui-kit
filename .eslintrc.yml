@@ -10,4 +10,7 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-rules: {}
+rules:
+  no-underscore-dangle: ['error', {
+    allow: ['__filename', '__dirname'],
+  }]
