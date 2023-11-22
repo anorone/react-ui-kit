@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 export default {
   mode: process.env.NODE_ENV || 'development',
-  entry: ['./src/index.js'],
+  entry: ['./src/index.jsx'],
   output: {
     path: path.resolve(__dirname, 'build/'),
     filename: 'script.js',
@@ -15,7 +15,13 @@ export default {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.jsx?$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        },
         resolve: {
           fullySpecified: false,
         },
