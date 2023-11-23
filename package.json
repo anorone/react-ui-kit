@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "lint": "eslint .",
     "start": "webpack serve",
