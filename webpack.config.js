@@ -12,6 +12,9 @@ export default {
     path: path.resolve(__dirname, 'build/'),
     filename: 'script.js',
   },
+  resolve: {
+    extensions: ['.jsx', '...'],
+  },
   module: {
     rules: [
       {
@@ -25,6 +28,11 @@ export default {
         resolve: {
           fullySpecified: false,
         },
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
