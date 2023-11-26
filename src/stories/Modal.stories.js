@@ -4,6 +4,10 @@ export default {
   component: Modal,
 };
 
-export const Default = {
-  args: {},
+export const Open = {
+  args: {
+    title: 'Modal title',
+    children: 'Modal content',
+    isOpen: true,
+  },
 };
