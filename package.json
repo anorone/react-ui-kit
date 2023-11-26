@@ -5,7 +5,7 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint ./**/*.{js,jsx}",
     "start": "webpack serve",
     "build": "webpack --mode production",
     "storybook": "storybook dev -p 6006",
