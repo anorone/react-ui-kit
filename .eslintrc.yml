@@ -2,9 +2,10 @@ env:
   browser: true
   es2021: true
 extends:
-  - plugin:react/recommended
-  - plugin:storybook/recommended
   - airbnb
+  - plugin:react/recommended
+  - plugin:react/jsx-runtime
+  - plugin:storybook/recommended
 overrides: []
 parserOptions:
   ecmaVersion: latest
@@ -14,4 +15,8 @@ plugins:
 rules:
   no-underscore-dangle: ['error', {
     allow: ['__filename', '__dirname'],
+  }]
+  react/function-component-definition: ['error', {
+    namedComponents: arrow-function,
+    unnamedComponents: arrow-function
   }]
