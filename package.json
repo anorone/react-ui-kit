@@ -1,13 +1,20 @@
 {
   "name": "@anorone/react-ui-kit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "main.js",
+  "files": [
+    "dist/lib",
+    "dist/style.css"
+  ],
   "scripts": {
     "lint": "eslint ./**/*.{js,jsx}",
-    "start": "webpack serve",
-    "build": "webpack --mode production",
+    "start": "webpack serve --config-name dev",
+    "build:css": "webpack --config-name dist",
+    "build:js": "babel src/lib --out-dir dist/lib",
+    "build": "npm run build:css && npm run build:js",
+    "prepack": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -22,6 +29,7 @@
   },
   "homepage": "https://github.com/anorone/react-ui-kit#readme",
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "@storybook/addon-essentials": "^7.5.3",
@@ -35,6 +43,7 @@
     "@storybook/testing-library": "^0.2.2",
     "autoprefixer": "^10.4.16",
     "babel-loader": "^9.1.3",
+    "babel-plugin-add-import-extension": "^1.6.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.54.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -44,6 +53,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
     "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.31",
     "postcss-load-config": "^4.0.2",
     "postcss-loader": "^7.3.3",
@@ -59,5 +69,8 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
   }
 }
