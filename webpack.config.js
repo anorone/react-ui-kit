@@ -21,9 +21,6 @@ const devConfig = {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            plugins: [
-              ['babel-plugin-add-import-extension', false],
-            ],
           },
         },
         resolve: {

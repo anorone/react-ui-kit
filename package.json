@@ -12,7 +12,7 @@
     "lint": "eslint ./**/*.{js,jsx}",
     "start": "webpack serve --config-name dev",
     "build:css": "webpack --config-name dist",
-    "build:js": "babel src/lib --out-dir dist/lib",
+    "build:js": "babel src/lib --out-dir dist/lib --plugins=babel-plugin-add-import-extension",
     "build": "npm run build:css && npm run build:js",
     "prepack": "npm run build",
     "storybook": "storybook dev -p 6006",
